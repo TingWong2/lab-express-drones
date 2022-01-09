@@ -1,1 +1,20 @@
 <h2>Available drones</h2>
+
+{{#if drones.length}}
+	<ul id="list-drones">
+		{{#each drones}}
+			<li>
+				<div class="card" style="border: 1px dotted; padding-left: 10px">
+				<p>Name: {{this.name}}</p>
+				<p>Propellers: {{this.propellers}}</p>
+				<p>Max Speed :{{this.maxSpeed}}</p>
+				<a href="/drones/{{this._id}}/delete"><i class="fa fa-trash"></i></a>
+				<a href="/drones/{{this._id}}/edit"><i class="fa fa-pen"></i></a>
+				</div>
+			</li>
+		{{/each}}
+	</ul>
+{{else}}
+  <p>sorry no drones yet</p>
+{{/if}}
+
